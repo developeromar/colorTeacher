@@ -18,7 +18,7 @@
             android:id="@+id/tbMain"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionbarmain"
-            android:background="?attr/colorPrimary"
+            android:background="@drawable/bgmain"
             android:elevation="4dp"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
