@@ -20,7 +20,7 @@
             android:id="@+id/tbMain"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+
             android:elevation="4dp"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -33,7 +33,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/actionbarmain"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/bgmain"
         android:elevation="4dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
