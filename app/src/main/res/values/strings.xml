@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Color Teacher</string>
+    <string name="whatColoris">What color is?</string>
+    <string name="basicColors">Basic Colors</string>
+    <string name="basicColorsName">Basic Colors Names</string>
+    <string name="colorMixer">Color Mixer</string>
+    <string name="secundaryColorsNames">Secundary Colors Names</string>
+    <string name="howtoObtain">How To Obtain This</string>
 </resources>
