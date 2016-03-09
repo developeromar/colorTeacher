@@ -6,6 +6,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,6 +24,7 @@ import java.util.List;
 public class MainFragment extends Fragment {
     private List<MainListObject> options;
     public MainFragment() {
+        setHasOptionsMenu(true);
 
     }
 
@@ -31,7 +35,7 @@ public class MainFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         initList();
-        MenuRecyclerAdapter menusRecyclerAdapter = new MenuRecyclerAdapter(options);
+        MenuRecyclerAdapter menusRecyclerAdapter = new MenuRecyclerAdapter(getActivity(), options);
         recyclerView.setAdapter(menusRecyclerAdapter);
         return view;
     }
@@ -46,5 +50,13 @@ public class MainFragment extends Fragment {
         );
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu, menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -6,4 +6,7 @@
     <string name="colorMixer">Color Mixer</string>
     <string name="secundaryColorsNames">Secundary Colors Names</string>
     <string name="howtoObtain">How To Obtain This</string>
+    <string name="icon">Icon</string>
+    <string name="options">Options:</string>
+    <string name="about">About</string>
 </resources>
