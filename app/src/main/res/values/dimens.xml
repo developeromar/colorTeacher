@@ -6,4 +6,6 @@
     <dimen name="headers">25sp</dimen>
     <dimen name="menu_vertical_margin">10dp</dimen>
     <dimen name="actionbarmainImage">300dp</dimen>
+
+    <integer name="anim_duration_long">500</integer>
 </resources>
