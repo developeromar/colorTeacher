@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.desarrolladorandroid.colorteacher.BasicColors;
+import com.desarrolladorandroid.colorteacher.DetailContentActivity;
 import com.desarrolladorandroid.colorteacher.R;
 import com.desarrolladorandroid.colorteacher.databinding.ItemMainListBinding;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
@@ -44,7 +44,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
         holder.binding.elementMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendViewTransition(BasicColors.class, holder, mainListObject);
+                sendViewTransition(DetailContentActivity.class, holder, mainListObject);
             }
         });
     }

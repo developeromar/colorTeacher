@@ -7,14 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/colorIcons</item>
-        <item name="android:textColorSecondary">@color/colorSecondaryText</item>
         <item name="android:divider">@color/colorDivider</item>
         <item name="android:icon">@color/colorIcons</item>
     </style>
 
-    <style name="BasicTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/menu_red</item>
-        <item name="colorPrimaryDark">@color/basic_color_dark</item>
+    <style name="BasicTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColorPrimary">@color/colorIcons</item>
     </style>
 
 </resources>

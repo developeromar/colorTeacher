@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import com.desarrolladorandroid.colorteacher.databinding.ActivityBasicColorsBinding;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
 
-public class BasicColors extends AppCompatActivity {
+public class DetailContentActivity extends AppCompatActivity {
     MainListObject menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,20 @@ public class BasicColors extends AppCompatActivity {
         menu = (MainListObject) getIntent().getExtras().getSerializable("menu");
         ActivityBasicColorsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_basic_colors);
         binding.setObject(menu);
+        setTheme(R.style.BasicTheme);
+        setSupportActionBar(binding.tbdetail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             entrace();
         }
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

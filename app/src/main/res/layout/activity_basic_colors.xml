@@ -13,9 +13,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.desarrolladorandroid.colorteacher.BasicColors">
+        tools:context=".DetailContentActivity">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/paddingstitle"
+            android:layout_height="@dimen/paddingstitle"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@android:drawable/presence_invisible"
+            android:transitionName="@string/icon"
+            app:colorTint="@{object.getColor()}" />
 
         <android.support.v7.widget.Toolbar
+            android:id="@+id/tbdetail"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@{object.getColor()}">
@@ -30,17 +43,10 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/paddingstitle"
-            android:layout_height="@dimen/paddingstitle"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:src="@android:drawable/presence_invisible"
-            android:transitionName="@string/icon"
-            app:colorTint="@{object.getColor()}" />
-
-
+        <FrameLayout
+            android:id="@+id/frame_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tbdetail" />
     </RelativeLayout>
 </layout>

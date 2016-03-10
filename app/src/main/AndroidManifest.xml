@@ -15,7 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BasicColors"></activity>
+        <activity android:name=".DetailContentActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVIT"
+                android:value="com.desarrolladorandroid.colorteacher.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
