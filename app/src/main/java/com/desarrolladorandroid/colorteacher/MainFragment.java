@@ -42,11 +42,11 @@ public class MainFragment extends Fragment {
 
     private void initList() {
         options = Arrays.asList(
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_red), getString(R.string.basicColors)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_blue), getString(R.string.basicColorsName)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_green), getString(R.string.howtoObtain)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_yellow), getString(R.string.secundaryColorsNames)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_light_green), getString(R.string.colorMixer))
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_red), getString(R.string.basicColors), ContextCompat.getColor(getContext(), R.color.basic_color_dark)),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_blue), getString(R.string.basicColorsName), ContextCompat.getColor(getContext(), R.color.menu_blue_dark)),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_green), getString(R.string.howtoObtain), ContextCompat.getColor(getContext(), R.color.menu_green_dark)),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_yellow), getString(R.string.secundaryColorsNames), ContextCompat.getColor(getContext(), R.color.menu_yellow_dark)),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_purple), getString(R.string.colorMixer), ContextCompat.getColor(getContext(), R.color.menu_purple_dark))
         );
     }
 

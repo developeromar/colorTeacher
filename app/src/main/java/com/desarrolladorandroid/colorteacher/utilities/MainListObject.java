@@ -13,10 +13,12 @@ import java.io.Serializable;
 public class MainListObject implements Serializable {
     int color;
     String name;
+    int colorStatus;
 
-    public MainListObject(@ColorRes int color, String name) {
+    public MainListObject(@ColorRes int color, String name, @ColorRes int colorStatus) {
         this.color = color;
         this.name = name;
+        this.colorStatus = colorStatus;
     }
 
     @BindingAdapter("bind:colorTint")
@@ -31,5 +33,9 @@ public class MainListObject implements Serializable {
 
     public int getColor() {
         return color;
+    }
+
+    public int getColorStatus() {
+        return colorStatus;
     }
 }

@@ -1,31 +1,37 @@
 package com.desarrolladorandroid.colorteacher;
 
 import android.annotation.TargetApi;
-import android.graphics.PorterDuff;
+import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
+import android.view.Window;
+import android.view.WindowManager;
 
+import com.desarrolladorandroid.colorteacher.databinding.ActivityBasicColorsBinding;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
 
 public class BasicColors extends AppCompatActivity {
-    ImageView imageView;
-
+    MainListObject menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basic_colors);
-        MainListObject menu = (MainListObject) getIntent().getExtras().getSerializable("menu");
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setColorFilter(menu.getColor(), PorterDuff.Mode.SRC_IN);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        menu = (MainListObject) getIntent().getExtras().getSerializable("menu");
+        ActivityBasicColorsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_basic_colors);
+        binding.setObject(menu);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             entrace();
+        }
 
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void entrace() {
-        getWindow().getEnterTransition().setDuration(getResources().getInteger(R.integer.anim_duration_long));
+        Window window = getWindow();
+        window.getEnterTransition().setDuration(getResources().getInteger(R.integer.anim_duration_long));
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(menu.getColorStatus());
+
     }
 }

@@ -55,7 +55,8 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, false,
                     new Pair<>(holder.binding.menuIcon, activity.getString(R.string.icon)
-                    ));
+                    )
+            );
             ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
             activity.startActivity(i, transitionActivityOptions.toBundle());
         } else {
