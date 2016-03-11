@@ -31,7 +31,8 @@
             android:id="@+id/tbdetail"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@{object.getColor()}">
+            android:background="@{object.getColor()}"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <TextView
                 android:id="@+id/titleBasicColors"

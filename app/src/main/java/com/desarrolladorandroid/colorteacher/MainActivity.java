@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void setupWindowAnimations() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Fade fade = new Fade();
-            fade.setDuration(200);
+            fade.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
             getWindow().setReenterTransition(fade);
             getWindow().setExitTransition(fade);
         }
