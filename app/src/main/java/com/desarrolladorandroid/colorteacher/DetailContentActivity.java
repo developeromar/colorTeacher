@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.desarrolladorandroid.colorteacher.databinding.ActivityContentBinding;
+import com.desarrolladorandroid.colorteacher.fragments.BasicColorName;
 import com.desarrolladorandroid.colorteacher.fragments.BasicColors;
 import com.desarrolladorandroid.colorteacher.fragments.MasterFragment;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
@@ -26,11 +27,9 @@ public class DetailContentActivity extends AppCompatActivity {
         binding.setObject(menu);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             entrace();
-            startAnimationFragment(getFragmentFromData());
-        } else {
-            startAnimationFragment(getFragmentFromData());
         }
-        setTheme(R.style.BasicTheme);
+        if (savedInstanceState == null)
+            startAnimationFragment(getFragmentFromData());
         setSupportActionBar(binding.tbdetail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -62,7 +61,7 @@ public class DetailContentActivity extends AppCompatActivity {
             case 0:
                 return new BasicColors();
             case 1:
-                return new BasicColors();
+                return new BasicColorName();
             case 2:
                 return new BasicColors();
             case 3:

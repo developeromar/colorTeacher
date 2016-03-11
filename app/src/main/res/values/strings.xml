@@ -10,4 +10,7 @@
     <string name="options">Options:</string>
     <string name="about">About</string>
     <string name="text">TEXT</string>
+    <string name="yellow">Yellow</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
 </resources>
