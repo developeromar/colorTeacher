@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -9,12 +9,17 @@
         <item name="android:textColorPrimary">@color/colorIcons</item>
         <item name="android:divider">@color/colorDivider</item>
         <item name="android:icon">@color/colorIcons</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
 
     </style>
 
     <style name="BasicTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:textColorPrimary">@color/colorIcons</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
 
     </style>
-
 </resources>

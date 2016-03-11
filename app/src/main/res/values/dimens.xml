@@ -8,5 +8,6 @@
     <dimen name="actionbarmainImage">300dp</dimen>
     <dimen name="paddingstitle">50dp</dimen>
 
-    <integer name="anim_duration_long">900</integer>
+    <integer name="anim_duration_long">600</integer>
+    <integer name="anim_duration_medium">300</integer>
 </resources>

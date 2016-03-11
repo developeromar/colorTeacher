@@ -42,11 +42,11 @@ public class MainFragment extends Fragment {
 
     private void initList() {
         options = Arrays.asList(
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_red), getString(R.string.basicColors), ContextCompat.getColor(getContext(), R.color.basic_color_dark)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_blue), getString(R.string.basicColorsName), ContextCompat.getColor(getContext(), R.color.menu_blue_dark)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_green), getString(R.string.howtoObtain), ContextCompat.getColor(getContext(), R.color.menu_green_dark)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_yellow), getString(R.string.secundaryColorsNames), ContextCompat.getColor(getContext(), R.color.menu_yellow_dark)),
-                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_purple), getString(R.string.colorMixer), ContextCompat.getColor(getContext(), R.color.menu_purple_dark))
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_red), getString(R.string.basicColors), ContextCompat.getColor(getContext(), R.color.basic_color_dark), 0),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_blue), getString(R.string.basicColorsName), ContextCompat.getColor(getContext(), R.color.menu_blue_dark), 1),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_green), getString(R.string.howtoObtain), ContextCompat.getColor(getContext(), R.color.menu_green_dark), 2),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_yellow), getString(R.string.secundaryColorsNames), ContextCompat.getColor(getContext(), R.color.menu_yellow_dark), 3),
+                new MainListObject(ContextCompat.getColor(getContext(), R.color.menu_purple), getString(R.string.colorMixer), ContextCompat.getColor(getContext(), R.color.menu_purple_dark), 4)
         );
     }
 

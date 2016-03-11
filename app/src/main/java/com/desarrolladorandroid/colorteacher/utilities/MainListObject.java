@@ -14,11 +14,13 @@ public class MainListObject implements Serializable {
     int color;
     String name;
     int colorStatus;
+    int fragment;
 
-    public MainListObject(@ColorRes int color, String name, @ColorRes int colorStatus) {
+    public MainListObject(@ColorRes int color, String name, @ColorRes int colorStatus, int fragment) {
         this.color = color;
         this.name = name;
         this.colorStatus = colorStatus;
+        this.fragment = fragment;
     }
 
     @BindingAdapter("bind:colorTint")
@@ -37,5 +39,9 @@ public class MainListObject implements Serializable {
 
     public int getColorStatus() {
         return colorStatus;
+    }
+
+    public int getFragment() {
+        return fragment;
     }
 }

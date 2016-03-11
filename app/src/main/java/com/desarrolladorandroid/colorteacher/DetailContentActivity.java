@@ -5,27 +5,34 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Fade;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.desarrolladorandroid.colorteacher.databinding.ActivityBasicColorsBinding;
+import com.desarrolladorandroid.colorteacher.databinding.ActivityContentBinding;
+import com.desarrolladorandroid.colorteacher.fragments.BasicColors;
+import com.desarrolladorandroid.colorteacher.fragments.MasterFragment;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
 
 public class DetailContentActivity extends AppCompatActivity {
     MainListObject menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupWindowAnimations();
         menu = (MainListObject) getIntent().getExtras().getSerializable("menu");
-        ActivityBasicColorsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_basic_colors);
+        ActivityContentBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_content);
         binding.setObject(menu);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            entrace();
+            startAnimationFragment(getFragmentFromData());
+        } else {
+            startAnimationFragment(getFragmentFromData());
+        }
         setTheme(R.style.BasicTheme);
         setSupportActionBar(binding.tbdetail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            entrace();
-        }
 
     }
 
@@ -43,4 +50,47 @@ public class DetailContentActivity extends AppCompatActivity {
         window.setStatusBarColor(menu.getColorStatus());
 
     }
+
+    private void startAnimationFragment(MasterFragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame_detail, fragment)
+                .commit();
+    }
+
+    public MasterFragment getFragmentFromData() {
+        switch (menu.getFragment()) {
+            case 0:
+                return new BasicColors();
+            case 1:
+                return new BasicColors();
+            case 2:
+                return new BasicColors();
+            case 3:
+                return new BasicColors();
+            case 4:
+                return new BasicColors();
+            default:
+                return new BasicColors();
+        }
+    }
+
+    protected void setupWindowAnimations() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Fade fade = new Fade();
+            fade.setDuration(getResources().getInteger(R.integer.anim_duration_long));
+            getWindow().setReenterTransition(fade);
+            getWindow().setEnterTransition(fade);
+        }
+    }
+    /*
+            MasterFragment fragment = getFragmentFromData();
+/*
+        Slide slideTransition = new Slide(Gravity.RIGHT);
+        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_long));
+
+        fragment.setEnterTransition(slideTransition);
+        fragment.setReenterTransition(slideTransition);
+        fragment.setExitTransition(slideTransition);
+       // fragment.setSharedElementEnterTransition(new ChangeBounds());
+    startAnimationFragment(fragment);*/
 }
