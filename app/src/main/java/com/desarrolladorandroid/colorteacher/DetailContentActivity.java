@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import com.desarrolladorandroid.colorteacher.databinding.ActivityContentBinding;
 import com.desarrolladorandroid.colorteacher.fragments.BasicColorName;
 import com.desarrolladorandroid.colorteacher.fragments.BasicColors;
+import com.desarrolladorandroid.colorteacher.fragments.ColorMixer;
 import com.desarrolladorandroid.colorteacher.fragments.MasterFragment;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
 
@@ -63,7 +64,7 @@ public class DetailContentActivity extends AppCompatActivity {
             case 1:
                 return new BasicColorName();
             case 2:
-                return new BasicColors();
+                return new ColorMixer();
             case 3:
                 return new BasicColors();
             case 4:

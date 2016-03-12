@@ -27,5 +27,9 @@
     <color name="red">#ff0000</color>
     <color name="blue">#0600b2</color>
     <color name="yellow">#fdff32</color>
+    <color name="purple">#7c00ff</color>
+    <color name="green">#3dc114</color>
+    <color name="orange">#ffc100</color>
+
 </resources>
 

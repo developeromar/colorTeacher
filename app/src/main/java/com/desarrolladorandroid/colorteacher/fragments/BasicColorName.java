@@ -44,7 +44,12 @@ public class BasicColorName extends MasterFragment implements View.OnClickListen
         this.colors[0] = new statusColor(getString(R.string.red));
         this.colors[1] = new statusColor(getString(R.string.blue));
         this.colors[2] = new statusColor(getString(R.string.yellow));
-        generateRandomNameColor();
+        if (savedInstanceState == null)
+            generateRandomNameColor();
+        else {
+            name.setText(savedInstanceState.getString("name"));
+            awnser.setText(savedInstanceState.getString("awnser"));
+        }
         return view;
     }
 
@@ -79,6 +84,13 @@ public class BasicColorName extends MasterFragment implements View.OnClickListen
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("name", (String) name.getText());
+        outState.putString("awnser", awnser.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.red_circle:
@@ -106,6 +118,7 @@ public class BasicColorName extends MasterFragment implements View.OnClickListen
                 }
                 break;
         }
+
     }
 
     public class statusColor {
@@ -129,5 +142,6 @@ public class BasicColorName extends MasterFragment implements View.OnClickListen
         public void setStatus(int status) {
             this.status = status;
         }
+
     }
 }
