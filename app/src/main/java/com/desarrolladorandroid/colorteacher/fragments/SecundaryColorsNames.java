@@ -15,16 +15,16 @@ import com.desarrolladorandroid.colorteacher.DetailContentActivity;
 import com.desarrolladorandroid.colorteacher.R;
 
 /**
- * Created by cosanchez on 11/03/2016.
+ * Created by cosanchez on 17/03/2016.
  */
-public class BasicColorName extends MasterFragment implements View.OnClickListener {
-    ImageView red, blue, yellow;
+public class SecundaryColorsNames extends MasterFragment implements View.OnClickListener {
+    ImageView orange, purple, green;
     TextView name, awnser;
     statusColor[] colors;
-    FloatingActionButton floatingActionButton;
     int count;
+    FloatingActionButton floatingActionButton;
 
-    public BasicColorName() {
+    public SecundaryColorsNames() {
         this.count = 0;
 
     }
@@ -34,21 +34,21 @@ public class BasicColorName extends MasterFragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_basic_color_name, container, false);
         floatingActionButton = (FloatingActionButton) view.findViewById(R.id.next);
-        red = (ImageView) view.findViewById(R.id.red_circle);
-        blue = (ImageView) view.findViewById(R.id.blue_circle);
-        yellow = (ImageView) view.findViewById(R.id.yellow_circle);
+        orange = (ImageView) view.findViewById(R.id.red_circle);
+        purple = (ImageView) view.findViewById(R.id.blue_circle);
+        green = (ImageView) view.findViewById(R.id.yellow_circle);
         name = (TextView) view.findViewById(R.id.name);
         awnser = (TextView) view.findViewById(R.id.awnser);
-        red.setColorFilter(ContextCompat.getColor(getContext(), R.color.red), PorterDuff.Mode.SRC_IN);
-        blue.setColorFilter(ContextCompat.getColor(getContext(), R.color.blue), PorterDuff.Mode.SRC_IN);
-        yellow.setColorFilter(ContextCompat.getColor(getContext(), R.color.yellow), PorterDuff.Mode.SRC_IN);
-        red.setOnClickListener(this);
-        blue.setOnClickListener(this);
-        yellow.setOnClickListener(this);
+        orange.setColorFilter(ContextCompat.getColor(getContext(), R.color.orange), PorterDuff.Mode.SRC_IN);
+        purple.setColorFilter(ContextCompat.getColor(getContext(), R.color.purple), PorterDuff.Mode.SRC_IN);
+        green.setColorFilter(ContextCompat.getColor(getContext(), R.color.green), PorterDuff.Mode.SRC_IN);
+        orange.setOnClickListener(this);
+        purple.setOnClickListener(this);
+        green.setOnClickListener(this);
         this.colors = new statusColor[3];
-        this.colors[0] = new statusColor(getString(R.string.red));
-        this.colors[1] = new statusColor(getString(R.string.blue));
-        this.colors[2] = new statusColor(getString(R.string.yellow));
+        this.colors[0] = new statusColor(getString(R.string.orange));
+        this.colors[1] = new statusColor(getString(R.string.purple));
+        this.colors[2] = new statusColor(getString(R.string.green));
         if (savedInstanceState == null)
             generateRandomNameColor();
         else {
@@ -87,7 +87,6 @@ public class BasicColorName extends MasterFragment implements View.OnClickListen
             floatingActionButton.setVisibility(View.VISIBLE);
             floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(((DetailContentActivity) getActivity()).getColorBar()));
         }
-
     }
 
     @Override

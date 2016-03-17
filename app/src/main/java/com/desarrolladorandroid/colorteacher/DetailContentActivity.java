@@ -13,11 +13,14 @@ import com.desarrolladorandroid.colorteacher.databinding.ActivityContentBinding;
 import com.desarrolladorandroid.colorteacher.fragments.BasicColorName;
 import com.desarrolladorandroid.colorteacher.fragments.BasicColors;
 import com.desarrolladorandroid.colorteacher.fragments.ColorMixer;
+import com.desarrolladorandroid.colorteacher.fragments.HowToObtain;
 import com.desarrolladorandroid.colorteacher.fragments.MasterFragment;
+import com.desarrolladorandroid.colorteacher.fragments.SecundaryColorsNames;
 import com.desarrolladorandroid.colorteacher.utilities.MainListObject;
 
 public class DetailContentActivity extends AppCompatActivity {
     MainListObject menu;
+    private int color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +63,20 @@ public class DetailContentActivity extends AppCompatActivity {
     public MasterFragment getFragmentFromData() {
         switch (menu.getFragment()) {
             case 0:
+                color = menu.getColor();
                 return new BasicColors();
             case 1:
+                color = menu.getColor();
                 return new BasicColorName();
             case 2:
+                color = menu.getColor();
                 return new ColorMixer();
             case 3:
-                return new BasicColors();
+                color = menu.getColor();
+                return new SecundaryColorsNames();
             case 4:
-                return new BasicColors();
+                color = menu.getColor();
+                return new HowToObtain();
             default:
                 return new BasicColors();
         }
@@ -81,6 +89,10 @@ public class DetailContentActivity extends AppCompatActivity {
             getWindow().setReenterTransition(fade);
             getWindow().setEnterTransition(fade);
         }
+    }
+
+    public int getColorBar() {
+        return color;
     }
     /*
             MasterFragment fragment = getFragmentFromData();
