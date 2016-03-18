@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Maestro de Colores</string>
+    <string name="whatColoris">¿Que Color Es?</string>
+    <string name="basicColors">Colores Basicos</string>
+    <string name="basicColorsName">Basic Colors Names</string>
+    <string name="colorMixer">Mexclador de Colores</string>
+    <string name="secundaryColorsNames">Nombre De Colores Secundarios</string>
+    <string name="howtoObtain">¿Como lo Obtengo?</string>
+    <string name="options">Opciones:</string>
+    <string name="about">Acerca de</string>
+    <string name="yellow">Amarillo</string>
+    <string name="blue">Azul</string>
+    <string name="red">Rojo</string>
+    <string name="orange">Naranja</string>
+    <string name="purple">Morado</string>
+    <string name="green">Verde</string>
+    <string name="succes">Correcto</string>
+    <string name="wrong">Fallaste</string>
+    <string name="continu">Seguir</string>
+</resources>
+

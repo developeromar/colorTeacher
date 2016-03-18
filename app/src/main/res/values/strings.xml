@@ -6,10 +6,10 @@
     <string name="colorMixer">Color Mixer</string>
     <string name="secundaryColorsNames">Secundary Colors Names</string>
     <string name="howtoObtain">How To Obtain This</string>
-    <string name="icon">Icon</string>
+    <string name="icon" translatable="false">Icon</string>
     <string name="options">Options:</string>
     <string name="about">About</string>
-    <string name="text">TEXT</string>
+    <string name="text" translatable="false">TEXT</string>
     <string name="yellow">Yellow</string>
     <string name="blue">Blue</string>
     <string name="red">Red</string>
