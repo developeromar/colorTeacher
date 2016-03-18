@@ -1,10 +1,13 @@
 package com.desarrolladorandroid.colorteacher.fragments;
 
+import android.content.DialogInterface;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +28,7 @@ public class HowToObtain extends MasterFragment implements View.OnClickListener 
     int position1;
     int position2;
     int[][] values;
+    int actualColor;
 
     public HowToObtain() {
     }
@@ -48,6 +52,13 @@ public class HowToObtain extends MasterFragment implements View.OnClickListener 
         blue.setColorFilter(ContextCompat.getColor(getContext(), R.color.blue), PorterDuff.Mode.SRC_IN);
         yellow.setColorFilter(ContextCompat.getColor(getContext(), R.color.yellow), PorterDuff.Mode.SRC_IN);
         baseColor = second.getColorFilter();
+        if (savedInstanceState == null) {
+            actualColor = values[((int) (Math.random() * 3))][((int) (Math.random() * 3))];
+
+        } else {
+            actualColor = savedInstanceState.getInt("primary");
+        }
+        finale.setColorFilter(actualColor);
         return view;
     }
 
@@ -82,12 +93,31 @@ public class HowToObtain extends MasterFragment implements View.OnClickListener 
         if (position == 0) {
             first.setColorFilter(color, PorterDuff.Mode.SRC_IN);
             second.setColorFilter(baseColor);
-            finale.setColorFilter(baseColor);
             position = 1;
         } else {
             second.setColorFilter(color, PorterDuff.Mode.SRC_IN);
-            finale.setColorFilter(getCombination(), PorterDuff.Mode.SRC_IN);
+            if (getCombination() == actualColor) {
+                Log.w("COLOR", "SI ENTRO");
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle(getString(R.string.succes));
+                builder.setPositiveButton(getString(R.string.continu), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        first.setColorFilter(baseColor);
+                        second.setColorFilter(baseColor);
+                        actualColor = values[((int) (Math.random() * 3))][((int) (Math.random() * 3))];
+                        finale.setColorFilter(actualColor);
+                    }
+                });
+                builder.create().show();
+
+            } else {
+                Log.w("COLOR", "NO ENTRO");
+                first.setColorFilter(baseColor);
+                second.setColorFilter(baseColor);
+            }
             position = 0;
+
         }
     }
 
@@ -96,5 +126,11 @@ public class HowToObtain extends MasterFragment implements View.OnClickListener 
     int getCombination() {
         return values[position1][position2];
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("primary", actualColor);
+        super.onSaveInstanceState(outState);
     }
 }
