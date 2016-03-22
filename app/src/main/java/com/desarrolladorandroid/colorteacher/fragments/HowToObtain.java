@@ -54,7 +54,6 @@ public class HowToObtain extends MasterFragment implements View.OnClickListener 
         baseColor = second.getColorFilter();
         if (savedInstanceState == null) {
             actualColor = values[((int) (Math.random() * 3))][((int) (Math.random() * 3))];
-
         } else {
             actualColor = savedInstanceState.getInt("primary");
         }
